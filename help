@@ -1,0 +1,18 @@
+moe|Grab the latest image from the E-shuushuu anime imageboard.|anime kawaii cute|regular
+eval|Execute Ruby code directly from within Discord.|null|owner
+twitter <username>|Get the latest tweet from a Twitter user.  Can be a bit slow.|null|regular
+feed <feed name or list>|Get the Latest news from available RSS feeds.|null|regular
+guilds|Display the number of guilds I'm in and how many users I've seen.|server stats|regular
+gameset <game>|Tell me what to play.|game gaming playing status|wlist
+say <message>|Make me say anything.|chat repeat|wlist
+nameset <name>|Change my username.|username name|owner
+shutdown|Turn me off.|stop|owner
+ping|I will give you my response time to Discord's servers in miliseconds.|null|regular
+invite|Get the invite link to add me to your own server!|oauth|regular
+ix.io <upload [string]> <get [url]> <download [url]>|Upload, retrieve and download as a text file any content from and to ix.io.|ixio web|regular
+whitelist <add [mention or id]> <remove [mention or id]>|Add or remove users from the global whitelist.|null|owner
+giz <string>|Transhizzle yo text, dawg!|gizoogle|regular
+help <command or keyword>|Displays help for a command.|null|regular
+mariomaker <course-id>|Grabs information about a Super Mario Maker course by it's ID.  Useful for viewer level requests.  Althought, if you're not a Discord fan, please look at https://warp.world for better functionality.|null|regular
+sys <linux command>|Lets you run lunix terminal commands.  warning to people in the whitelist. this bypasses sudo passwords and you could break the whole system with rm -rf /.|cli tty|whitelist
+anime <title or hummingbird id>|gives out information from <http://hummingbird.me> about an anime.|null|regular
