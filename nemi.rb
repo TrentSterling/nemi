@@ -28,17 +28,10 @@ learn_data = File.open("markov.txt", "rb").read
 learn_array = learn_data.split("\n")
 learn_array.each { |x| markov.learn(x) }
 
-amai_replies = ["What??  Amai is not in here you say?  well, that's lame.",
-"You know, if you like memes and stupid stuff, maybe consider adding my BFF Amai?",
-"Wow, why sin't Amai in here? I'm more of a relaxed person but I still enjoy her company.",
-"I don't know if you like memes. But if you do, how about adding Amai in here?"]
-
 bot = Discordrb::Commands::CommandBot.new token: config["login"]["bot_token"], client_id: bot_id, prefix: prefix
 
-bot.message(with_text: "Yo did he just, walk up slowly...  AND DOWN SMASH!?") do |event|
-  if event.author.name == "Amai"
-    event.respond "He did, he really did tho."
-  end
+bot.command :amai do |event|
+  "TripingPC, the dev for Nemi and Amai has given up on trying to maintain two bots at once.  The developer panel application for Amai will be removed on February 3rd 2016.  Please make sure to tell server admins you know of that use Amai that they should switch to this bot..  Most features from Amai will be ported over to Nemi."
 end
 
 bot.command :delete do |event, id|
@@ -54,7 +47,7 @@ bot.command :delete do |event, id|
 end
 
 bot.command :info do |event|
-  "For more info and to Add Amai, go to http://tripin.gq/amai-nemi"
+  "For more info go to http://tripin.gq/nemi"
 end
 
 bot.command :anime do |event, *str|
@@ -66,7 +59,7 @@ bot.command :anime do |event, *str|
      event.respond "Here, have this ~~you dumdum living meme.~~\n http://imdb.com/title/tt0805815"
 	 break
    elsif str.include? "fresh-prince"
-     event.respond "You disappoint me greatly...  Why don't you just go with Amai, she's the memelord around here.  Well whatever, you asked for it.\n http://imdb.com/title/tt0098800"
+     event.respond "You disappoint me greatly...  Well whatever, you asked for it.\n http://imdb.com/title/tt0098800"
 	 break
    end
    
@@ -143,9 +136,9 @@ bot.command :help do |event, *search|
   end
   stdout, stdeerr, status = Open3.capture3("cat help | grep -i #{search}")
   if stdout.length < 3
-    "Invalid search.  For a list of all the commands go to http://tripin.gq/amai-nemi"
+    "Invalid search.  For a list of all the commands go to http://tripin.gq/nemi/help"
   elsif search.length < 1
-    "For the full list of commands and their usage, go to http://tripin.gq/amai-nemi"
+    "For the full list of commands and their usage, go to http://tripin.gq/nemi/help"
   elsif do_tags == false
     help_obj = stdout.split("|")
     "**#{help_obj[0]}** `Available to: #{help_obj[3]}`\n\n#{help_obj[1]}"
@@ -185,7 +178,7 @@ bot.command :moe do |event|
 end
 
 bot.command :invite do |event|
-  "Add me to your server. https://discordapp.com/oauth2/authorize?&client_id=#{app_id}&scope=bot&permissions=0 and while you're at it how about you add Amai too?"
+  "Add me to your server. https://discordapp.com/oauth2/authorize?&client_id=#{app_id}&scope=bot&permissions=0"
 end
 
 bot.command(:"ix.io") do |event, action, *str|
@@ -237,10 +230,6 @@ end
 
 bot.command :guilds do |event|
   "I am in #{bot.servers.length} guilds and I've seen a whopping #{bot.users.length} users!"
-end
-
-bot.command :region do |event|
-  "this server is located in **#{event.server.region}**"
 end
 
 bot.command :gameset do |event, *str|
